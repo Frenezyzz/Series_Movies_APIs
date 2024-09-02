@@ -4,18 +4,10 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.chrome.options import Options
-# Ruta al ejecutable del controlador de Chrome
 
-# Configurar las opciones de Chrome para ejecutarlo en modo headless
-# Configurar las opciones de Chrome
 def channels():
 
-    chrome_options = Options()
-    chrome_options.add_argument("--headless")  # Ejecutar en modo headless (sin interfaz gráfica)
-    chrome_options.add_argument("--disable-gpu")  # Desactivar la GPU para mayor compatibilidad
-    chrome_options.add_argument("--window-size=1920x1080")  # Definir un tamaño de ventana
-    chrome_options.add_argument("--no-sandbox")  # Agregar esta opción si se ejecuta en un entorno de servidor
-    chrome_options.add_argument("--disable-dev-shm-usage")  # Evitar problemas en entornos de bajo almacenamiento compartido
+    
 
     chromedriver_path = r"C:\Users\ibane\OneDrive\Escritorio\chromedriver-win64\chromedriver.exe"
 
@@ -23,7 +15,6 @@ def channels():
     service = Service(executable_path=chromedriver_path)
     driver = webdriver.Chrome(service=service)
 
-    # Ahora puedes usar el driver para abrir páginas, por ejemplo:
 
 
     driver.get("https://www.pluto.tv")
